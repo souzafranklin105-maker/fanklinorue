@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPro Formatação & Serviços | Aparecida de Goiânia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for professional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#0284c7',
+                        techGreen: '#10b981',
+                        darkBg: '#0f172a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #0369a1 50%, #047857 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.2), 0 10px 10px -5px rgba(2, 132, 199, 0.2);
+        }
+        .pulse-whatsapp {
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-techGreen selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-techBlue to-techGreen flex items-center justify-center text-white text-xl font-bold shadow-lg shadow-techGreen/30">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Tech<span class="text-techGreen">Pro</span></span>
+                    <p class="text-xs text-slate-400">Aparecida de Goiânia - GO</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#inicio" class="text-slate-300 hover:text-techGreen transition">Início</a>
+                <a href="#servicos" class="text-slate-300 hover:text-techGreen transition">Serviços</a>
+                <a href="#tabela" class="text-slate-300 hover:text-techGreen transition">Preços</a>
+                <a href="#sobre" class="text-slate-300 hover:text-techGreen transition">Sobre</a>
+                <a href="#contato" class="text-slate-300 hover:text-techGreen transition">Contato</a>
+            </nav>
+
+            <div>
+                <a href="https://wa.me/5562981225308?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações%20sobre%20os%20serviços." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-techGreen to-emerald-600 hover:from-emerald-600 hover:to-techGreen text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-techGreen/25 transition duration-300">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>(62) 98122-5308</span>
+                </a>
+                <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-slate-300 hover:text-techGreen py-2">Início</a>
+            <a href="#servicos" class="block text-slate-300 hover:text-techGreen py-2">Serviços</a>
+            <a href="#tabela" class="block text-slate-300 hover:text-techGreen py-2">Preços</a>
+            <a href="#sobre" class="block text-slate-300 hover:text-techGreen py-2">Sobre</a>
+            <a href="#contato" class="block text-slate-300 hover:text-techGreen py-2">Contato</a>
+            <a href="https://wa.me/5562981225308?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20orçamento." target="_blank" class="flex items-center justify-center gap-2 bg-techGreen text-white w-full py-3 rounded-xl font-semibold mt-4">
+                <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-32 hero-gradient relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-techGreen/10 border border-techGreen/30 text-techGreen text-sm font-semibold">
+                        <i class="fa-solid fa-location-dot"></i> Atendimento em Aparecida de Goiânia e Região
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Formatação & <span class="text-transparent bg-clip-text bg-gradient-to-r from-techGreen to-techBlue">Tecnologia</span> com Qualidade
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-xl mx-auto lg:mx-0">
+                        Seu computador, notebook ou celular lento ou travando? Deixe com a gente! Especialistas em formatação rápida, recuperação, criação de currículos e cardápios digitais profissionais.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-techGreen hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-techGreen/30 transition transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Orçamento Imediato</span>
+                        </a>
+                        <a href="#tabela" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 px-6 py-4 rounded-xl font-semibold text-lg transition">
+                            <i class="fa-solid fa-tags text-techBlue"></i>
+                            <span>Ver Tabela de Preços</span>
+                        </a>
+                    </div>
+                    <!-- Trust badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-bold text-techGreen">100%</p>
+                            <p class="text-xs text-slate-400">Garantia de Serviço</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-techBlue">Rápido</p>
+                            <p class="text-xs text-slate-400">Agilidade e Segurança</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-techGreen">Atendimento</p>
+                            <p class="text-xs text-slate-400">Personalizado via WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md bg-slate-800/90 border border-slate-700/80 rounded-3xl p-6 shadow-2xl relative backdrop-blur-sm card-hover">
+                        <div class="absolute -top-3 -right-3 bg-techGreen text-slate-900 font-extrabold text-xs px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                            Popular
+                        </div>
+                        <div class="text-center pb-6 border-b border-slate-700">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-techBlue to-techGreen flex items-center justify-center text-white text-3xl shadow-lg">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Formatação Completa</h3>
+                            <p class="text-slate-400 text-sm mt-1">Computadores e Notebooks</p>
+                            <div class="mt-4">
+                                <span class="text-slate-400 text-sm">Apenas</span>
+                                <div class="text-4xl font-extrabold text-techGreen">R$ 80,00</div>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 py-6 text-sm text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-techGreen"></i> Instalação Windows (7, 10 ou 11)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-techGreen"></i> Drivers atualizados e otimização</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-techGreen"></i> Pacote Office, Chrome, antivírus e leitores</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-techGreen"></i> Limpeza lógica e remoção de vírus</li>
+                        </ul>
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20agendar%20a%20Formatação%20de%20Computador%20por%20R$80." target="_blank" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-techBlue to-techGreen hover:opacity-90 text-white py-3 rounded-xl font-bold transition shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar pelo WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="servicos" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-techGreen font-semibold tracking-wider uppercase text-sm">O que fazemos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Soluções Rápidas e Profissionais</h2>
+                <p class="text-slate-400 mt-3">Trabalho especializado com total transparência e preço justo em Aparecida de Goiânia.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-techBlue/10 border border-techBlue/30 text-techBlue flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Computadores & Notebooks</h3>
+                        <p class="text-slate-400 text-sm mb-6">Formatação completa, troca de peças, limpeza física e otimização para deixar sua máquina voando.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-techGreen font-extrabold text-lg">R$ 80,00</span>
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20saber%20mais%20sobre%20formatação%20de%20computador." target="_blank" class="text-techBlue hover:underline text-sm font-semibold flex items-center gap-1">Chamar <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-techGreen/10 border border-techGreen/30 text-techGreen flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Celulares Android</h3>
+                        <p class="text-slate-400 text-sm mb-6">Formatação, restauração de fábrica, remoção de travamentos e otimização de espaço para smartphones Android.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-techGreen font-extrabold text-lg">R$ 60,00</span>
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20saber%20sobre%20formatação%20de%20celular." target="_blank" class="text-techBlue hover:underline text-sm font-semibold flex items-center gap-1">Chamar <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-techBlue/10 border border-techBlue/30 text-techBlue flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Currículo Profissional</h3>
+                        <p class="text-slate-400 text-sm mb-6">Elaboração de currículos modernos e chamativos focados em destacar suas qualificações para conquistar emprego.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-techGreen font-extrabold text-lg">R$ 30,00</span>
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Gostaria%20de%20fazer%20um%20currículo." target="_blank" class="text-techBlue hover:underline text-sm font-semibold flex items-center gap-1">Chamar <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-techGreen/10 border border-techGreen/30 text-techGreen flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Cardápio Digital</h3>
+                        <p class="text-slate-400 text-sm mb-6">Cardápio digital interativo ou em imagem profissional ideal para envio rápido via WhatsApp ou E-mail.</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-techGreen font-extrabold text-lg">R$ 50,00</span>
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Gostaria%20de%20criar%20um%20cardápio%20digital." target="_blank" class="text-techBlue hover:underline text-sm font-semibold flex items-center gap-1">Chamar <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table Section -->
+    <section id="tabela" class="py-20 bg-slate-900 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-techBlue font-semibold tracking-wider uppercase text-sm">Transparência Total</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Tabela de Preços Oficial</h2>
+                <p class="text-slate-400 mt-3">Valores justos e acessíveis para Aparecida de Goiânia e região.</p>
+            </div>
+
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 border-b border-slate-800 text-slate-300 text-sm uppercase tracking-wider">
+                                <th class="py-5 px-6 font-semibold">Serviço Realizado</th>
+                                <th class="py-5 px-6 font-semibold hidden sm:table-cell">Descrição Detalhada</th>
+                                <th class="py-5 px-6 font-semibold text-center">Preço</th>
+                                <th class="py-5 px-6 font-semibold text-right">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 text-slate-200">
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-5 px-6 font-bold flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-techGreen/10 text-techGreen flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-laptop"></i>
+                                    </div>
+                                    <span>Formatação de Computadores e Notebooks</span>
+                                </td>
+                                <td class="py-5 px-6 text-slate-400 text-sm hidden sm:table-cell">
+                                    Instalação Windows, Drivers atualizados e Programas essenciais.
+                                </td>
+                                <td class="py-5 px-6 text-center font-extrabold text-techGreen text-lg">R$ 80,00</td>
+                                <td class="py-5 px-6 text-right">
+                                    <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20agendar%20a%20Formatação%20de%20Computador%20por%20R$80." target="_blank" class="inline-flex items-center gap-1.5 bg-techGreen hover:bg-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow">
+                                        <i class="fa-brands fa-whatsapp"></i> Pedir
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-5 px-6 font-bold flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-techBlue/10 text-techBlue flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-mobile-screen"></i>
+                                    </div>
+                                    <span>Formatação de Celulares</span>
+                                </td>
+                                <td class="py-5 px-6 text-slate-400 text-sm hidden sm:table-cell">
+                                    Sistema Android, restauração de fábrica e limpeza de cache.
+                                </td>
+                                <td class="py-5 px-6 text-center font-extrabold text-techGreen text-lg">R$ 60,00</td>
+                                <td class="py-5 px-6 text-right">
+                                    <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20agendar%20a%20Formatação%20de%20Celular%20por%20R$60." target="_blank" class="inline-flex items-center gap-1.5 bg-techGreen hover:bg-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow">
+                                        <i class="fa-brands fa-whatsapp"></i> Pedir
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-5 px-6 font-bold flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-techGreen/10 text-techGreen flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-file-lines"></i>
+                                    </div>
+                                    <span>Criação de Currículo Profissional</span>
+                                </td>
+                                <td class="py-5 px-6 text-slate-400 text-sm hidden sm:table-cell">
+                                    Desenvolvimento de currículo moderno para imprimir ou enviar via WhatsApp/E-mail.
+                                </td>
+                                <td class="py-5 px-6 text-center font-extrabold text-techGreen text-lg">R$ 30,00</td>
+                                <td class="py-5 px-6 text-right">
+                                    <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20criar%20meu%20Currículo%20Profissional%20por%20R$30." target="_blank" class="inline-flex items-center gap-1.5 bg-techGreen hover:bg-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow">
+                                        <i class="fa-brands fa-whatsapp"></i> Pedir
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-5 px-6 font-bold flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-techBlue/10 text-techBlue flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-utensils"></i>
+                                    </div>
+                                    <span>Criação de Cardápio Digital</span>
+                                </td>
+                                <td class="py-5 px-6 text-slate-400 text-sm hidden sm:table-cell">
+                                    Cardápio digital completo para WhatsApp e E-mail de lanchonetes, restaurantes, etc.
+                                </td>
+                                <td class="py-5 px-6 text-center font-extrabold text-techGreen text-lg">R$ 50,00</td>
+                                <td class="py-5 px-6 text-right">
+                                    <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20criar%20um%20Cardápio%20Digital%20por%20R$50." target="_blank" class="inline-flex items-center gap-1.5 bg-techGreen hover:bg-emerald-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow">
+                                        <i class="fa-brands fa-whatsapp"></i> Pedir
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-5 px-6 font-bold flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg bg-techGreen/10 text-techGreen flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                                    </div>
+                                    <span>Outros Serviços de Informática</span>
+                                </td>
+                                <td class="py-5 px-6 text-slate-400 text-sm hidden sm:table-cell">
+                                    Instalação de programas específicos, backup de dados, limpeza física e manutenção.
+                                </td>
+                                <td class="py-5 px-6 text-center font-extrabold text-techBlue text-base">A partir de R$ 50,00</td>
+                                <td class="py-5 px-6 text-right">
+                                    <a href="https://wa.me/5562981225308?text=Olá!%20Gostaria%20de%20orçamento%20para%20outros%20serviços." target="_blank" class="inline-flex items-center gap-1.5 bg-techBlue hover:bg-sky-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow">
+                                        <i class="fa-brands fa-whatsapp"></i> Orçamento
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-slate-900 p-4 sm:p-6 text-center border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p class="text-sm text-slate-400">Dúvidas sobre algum problema específico? Fale direto no WhatsApp agora mesmo.</p>
+                    <a href="https://wa.me/5562981225308?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20os%20serviços." target="_blank" class="inline-flex items-center gap-2 bg-techGreen hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> (62) 98122-5308
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-techGreen font-semibold uppercase tracking-wider text-sm">Por que nos escolher?</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Especialista em Tecnologia em Aparecida de Goiânia</h2>
+                    <p class="text-slate-300">
+                        Prestamos serviços dedicados com agilidade e compromisso. Se o seu computador travou, o notebook está lento, precisa de um currículo profissional de destaque ou quer impulsionar seu negócio com um cardápio digital via WhatsApp, nós resolvemos com rapidez.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-techGreen/10 text-techGreen flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Serviço Rápido</h4>
+                                <p class="text-slate-400 text-sm">Agilidade na entrega e diagnósticos precisos para você não ficar na mão.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-techBlue/10 text-techBlue flex items-center justify-center shrink-0 mt-1">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Preço Justo e Transparente</h4>
+                                <p class="text-slate-400 text-sm">Sem surpresas: preço combinado e qualidade garantida em Aparecida de Goiânia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-900 to-slate-900 border border-slate-800 p-8 rounded-3xl relative shadow-2xl">
+                    <div class="absolute -top-4 -right-4 bg-techBlue text-white text-xs font-bold px-4 py-2 rounded-xl shadow-lg">
+                        Atendimento Local
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Informações de Contato</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-techGreen/10 text-techGreen flex items-center justify-center text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">WhatsApp Direto</p>
+                                <a href="https://wa.me/5562981225308" target="_blank" class="text-lg font-bold text-white hover:text-techGreen transition">(62) 98122-5308</a>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-techBlue/10 text-techBlue flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Localização</p>
+                                <p class="text-lg font-bold text-white">Aparecida de Goiânia - GO</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-techGreen/10 text-techGreen flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Horário de Atendimento</p>
+                                <p class="text-lg font-bold text-white">Segunda a Sábado</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <a href="https://wa.me/5562981225308?text=Olá!%20Gostaria%20de%20atendimento." target="_blank" class="w-full flex items-center justify-center gap-2 bg-techGreen hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Falar no WhatsApp Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA Banner -->
+    <section id="contato" class="py-20 hero-gradient relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Precisa de Formatação ou Documentos Rápidos?</h2>
+            <p class="text-lg text-slate-200 max-w-2xl mx-auto mb-8">
+                Não fique na mão com computador travando ou sem currículo para aquela vaga de emprego. Entre em contato agora mesmo!
+            </p>
+            <a href="https://wa.me/5562981225308?text=Olá!%20Preciso%20de%20um%20serviço%20urgente." target="_blank" class="inline-flex items-center gap-3 bg-white text-slate-900 hover:bg-slate-100 font-extrabold px-8 py-4 rounded-2xl text-xl shadow-2xl transition transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-2xl text-techGreen"></i>
+                <span>Chamar (62) 98122-5308</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5562981225308?text=Olá!%20Vim%20pelo%20site%20e%20quero%20um%20orçamento." target="_blank" class="fixed bottom-6 right-6 z-50 bg-techGreen hover:bg-emerald-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl pulse-whatsapp transition transform hover:scale-110" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-techBlue to-techGreen flex items-center justify-center text-white text-sm font-bold">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <span class="text-lg font-bold text-white">Tech<span class="text-techGreen">Pro</span> Aparecida de Goiânia</span>
+            </div>
+            <p class="text-center">© 2026 TechPro. Todos os direitos reservados. Formatação, Currículos e Cardápios Digitais.</p>
+            <div class="flex space-x-4">
+                <a href="https://wa.me/5562981225308" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-techGreen hover:bg-slate-800 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
