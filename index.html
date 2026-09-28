@@ -64,6 +64,7 @@
             
             <nav class="hidden md:flex items-center space-x-8 font-medium">
                 <a href="#inicio" class="text-slate-300 hover:text-techGreen transition">Início</a>
+                <a href="#radio" class="text-slate-300 hover:text-techGreen transition">Rádio 24h</a>
                 <a href="#servicos" class="text-slate-300 hover:text-techGreen transition">Serviços</a>
                 <a href="#tabela" class="text-slate-300 hover:text-techGreen transition">Preços</a>
                 <a href="#sobre" class="text-slate-300 hover:text-techGreen transition">Sobre</a>
@@ -83,6 +84,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
             <a href="#inicio" class="block text-slate-300 hover:text-techGreen py-2">Início</a>
+            <a href="#radio" class="block text-slate-300 hover:text-techGreen py-2">Rádio 24h</a>
             <a href="#servicos" class="block text-slate-300 hover:text-techGreen py-2">Serviços</a>
             <a href="#tabela" class="block text-slate-300 hover:text-techGreen py-2">Preços</a>
             <a href="#sobre" class="block text-slate-300 hover:text-techGreen py-2">Sobre</a>
@@ -160,6 +162,49 @@
                         <a href="https://wa.me/5562981225308?text=Olá!%20Quero%20agendar%20a%20Formatação%20de%20Computador%20por%20R$80." target="_blank" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-techBlue to-techGreen hover:opacity-90 text-white py-3 rounded-xl font-bold transition shadow-lg">
                             <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar pelo WhatsApp
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Radio Player Section (Novo) -->
+    <section id="radio" class="py-12 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border border-techGreen/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                <!-- Glow Effect -->
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-techGreen/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                    <div class="flex items-center space-x-4 text-center md:text-left">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-techGreen to-emerald-500 flex items-center justify-center text-slate-950 text-2xl font-bold shadow-lg shadow-techGreen/30 shrink-0">
+                            <i class="fa-solid fa-radio animate-pulse"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-techGreen/20 text-techGreen text-xs font-bold uppercase tracking-wider mb-1">Ao Vivo 24 Horas</span>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-white">Rádio Sertanejo Raiz & Universitário</h3>
+                            <p class="text-slate-400 text-sm">Curta o melhor do modão e dos sucessos sertanejos enquanto navega.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 w-full md:w-auto justify-center">
+                        <audio id="sertanejo-audio" src="https://stream.zeno.fm/f3nnfe10zchvv" preload="none"></audio>
+                        <button id="radio-toggle-btn" class="flex items-center justify-center gap-3 bg-techGreen hover:bg-emerald-600 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-lg shadow-techGreen/30 transition transform hover:scale-105 w-full md:w-auto">
+                            <i id="radio-icon" class="fa-solid fa-play text-xl"></i>
+                            <span id="radio-text">Ouvir Rádio</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Volume / Status extra -->
+                <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between text-xs text-slate-400 gap-2">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-techGreen animate-ping"></span>
+                        <span>Transmissão via Streaming Online 24h</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-volume-high text-techGreen"></i>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.8" class="w-24 accent-techGreen cursor-pointer">
                     </div>
                 </div>
             </div>
@@ -475,7 +520,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu & Radio Player -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -489,6 +534,34 @@
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
+        });
+
+        // Radio Player Script
+        const audio = document.getElementById('sertanejo-audio');
+        const playBtn = document.getElementById('radio-toggle-btn');
+        const radioIcon = document.getElementById('radio-icon');
+        const radioText = document.getElementById('radio-text');
+        const volumeSlider = document.getElementById('volume-slider');
+
+        audio.volume = volumeSlider.value;
+
+        playBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    radioIcon.className = "fa-solid fa-pause text-xl";
+                    radioText.textContent = "Pausar Rádio";
+                }).catch(e => {
+                    console.error("Erro ao reproduzir áudio:", e);
+                });
+            } else {
+                audio.pause();
+                radioIcon.className = "fa-solid fa-play text-xl";
+                radioText.textContent = "Ouvir Rádio";
+            }
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value;
         });
     </script>
 </body>
